@@ -10,6 +10,8 @@ exports.aliasTopTours = (req, res, next) => {
 
 exports.getAllTours = async (req, res) => {
   try {
+    //chaingway 
+    //Tour.find().where('duration').equals(5).where('difficullty').equals('easy')
     // EXECUTE QUERY
     const features = new APIFeatures(Tour.find(), req.query)
       .filter()
