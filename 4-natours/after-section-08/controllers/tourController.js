@@ -113,6 +113,8 @@ exports.deleteTour = async (req, res) => {
   }
 };
 
+
+/// Agreation pipleine offered by mongoDB
 exports.getTourStats = async (req, res) => {
   try {
     const stats = await Tour.aggregate([
@@ -121,7 +123,7 @@ exports.getTourStats = async (req, res) => {
       },
       {
         $group: {
-          _id: { $toUpper: '$difficulty' },
+          _id: { $toUpper: '$difficulty' }, 
           numTours: { $sum: 1 },
           numRatings: { $sum: '$ratingsQuantity' },
           avgRating: { $avg: '$ratingsAverage' },
